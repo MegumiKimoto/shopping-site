@@ -1,0 +1,55 @@
+header {
+  color: #524c3e; }
+  header #header_in {
+    padding: 40px 0; }
+  header .container {
+    width: 100%; }
+  @media (min-width: 321px) {
+    header .navi-container .pc_navi .pc_navi_li {
+      display: flex;
+      font-size: 13px;
+      font-size: 1.3rem;
+      margin-bottom: 0; }
+      header .navi-container .pc_navi .pc_navi_li li a {
+        color: #524c3e;
+        margin-right: 20px;
+        font-weight: bold; }
+      header .navi-container .pc_navi .pc_navi_li li a .pc_fb_icon {
+        margin-right: 10px; }
+      header .navi-container .pc_navi .pc_navi_li li li .pc_fb_icon a {
+        margin-right: 10px !important; } }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  color: #000000;
+  margin: 0 auto;
+  background-color: #f9f8f6;
+  max-width: 940px; }
+
+p {
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+@media (max-width: 320px) {
+  .pc_only {
+    display: none; } }
+@media (min-width: 321px) {
+  .sp_only {
+    display: none; } }
+.newItems .item-container {
+  display: flex;
+  flex-wrap: wrap; }
+  .newItems .item-container li {
+    width: 33.33%; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import "header", "footer";
+
+html {
+  font-size: 62.5%;
+}
+
+@mixin fontsize($size: 24, $base: 10) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+$large: "(min-width:321px)";
+$small: "(max-width:320px)";
+
+$ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳ Ｐゴシック", sans-serif;
+
+$bg : #f9f8f6;
+$beige : #887f69;
+$dark_beige : #524c3e;
+
+
+body{
+  color: #000000;
+  margin: 0 auto;
+  background-color: $bg;
+  max-width: 940px;
+}
+p {
+  @include fontsize(16);
+}
+a{
+  text-decoration: none;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding:0;
+  }
+
+//Basic
+
+
+//sp
+@media #{$small} {
+    .pc_only{
+      display: none;
+    }
+}
+//small for sp
+
+//pc
+@media #{$large}{
+  .sp_only{
+    display: none;
+  }
+}
+
+.newItems {
+  .item-container {
+    display: flex;
+    flex-wrap: wrap;
+    li{
+      width: 33.33%;
+    }
+  }
+}
