@@ -27,7 +27,7 @@ body{
   max-width: 940px;
 }
 p {
-  @include fontsize(16);
+  @include fontsize(12);
 }
 a{
   text-decoration: none;
@@ -64,18 +64,66 @@ li {
     width: 100%;
     li{
       width: 30%;
-      //max-width: 232px;
       background: #fff;
-      margin-right: 1px;
+      margin-right: 2px;
+      margin-bottom: 2px;
       padding: 15px;
       p{
+        margin-bottom: 10px;
         img{
           width: 100%;
+        }
+        span{
+          display: block;
+          padding-top: 10px;
         }
       }
       &:nth-child(3n) {
         margin-right: 0;
       }
     }
+  }
+}
+#popularItems{
+  @extend #newItems;
+}
+#shoppingGuide{
+  .guide_container{
+    display: flex;
+    background: #fff;
+    .delivery{
+      padding: 20px;
+      width: 50%;
+      dl{
+        margin-bottom: 0;
+        dt{
+          color: $beige;
+          font-weight: bold;
+          margin-bottom: 15px;
+          line-height: 1;
+          span{
+            @include fontsize(25); 
+          }
+        }
+        dd{
+          margin-bottom: 20px;
+          line-height: 1;
+          -webkit-margin-start: 0;
+          &:last-child{
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    h3{
+      @include fontsize(16);
+      font-weight: bold;
+      color: $beige;
+    }
+  }
+  .payment{
+  @extend .delivery;
+  border-left: 5px solid $bg;
+  box-sizing: border-box;
   }
 }

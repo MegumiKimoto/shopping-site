@@ -37,6 +37,7 @@ header{
     }
     .navi-container{
       .pc_navi {
+        float: right;
         .pc_navi_li{
           display: flex;
           @include fontsize(13);
