@@ -31,6 +31,10 @@ header{
 
 //pc
 @media #{$large}{
+    h1{
+      margin-bottom: 0;
+      line-height: 0;
+    }
     .navi-container{
       .pc_navi {
         .pc_navi_li{
@@ -38,9 +42,15 @@ header{
           @include fontsize(13);
           margin-bottom: 0;
           li{
+            padding: 5px 20px 0 0;
+            &:nth-child(5){
+              padding: 0 10px 0 0;
+            }
+            &:nth-child(6){
+              padding: 0 0 0 0;
+            }
               a{
                 color: $dark_beige;
-                margin-right: 20px;
                 font-weight: bold;
               }
               a .pc_fb_icon{
