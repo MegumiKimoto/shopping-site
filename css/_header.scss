@@ -23,53 +23,49 @@ header{
     width: 100%;
   }
 
-//sp
-@media #{$small} {
-
-}
-//small for sp
-
 //pc
 @media #{$large}{
     h1{
       margin-bottom: 0;
       line-height: 0;
     }
-    .navi-container{
-      .pc_navi {
-        float: right;
-        .pc_navi_li{
+    .container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        >:first-child{
+          margin-right: auto;
+        }
+      .pc_navi_container {
+        .pc_navi_wrap{
           display: flex;
+          align-items: flex-end;
           @include fontsize(13);
           margin-bottom: 0;
           li{
-            padding: 5px 20px 0 0;
+            padding-right: 20px;
             &:nth-child(5){
-              padding: 0 10px 0 0;
+              padding-right:10px;
             }
             &:nth-child(6){
-              padding: 0 0 0 0;
+              padding: 0;
             }
-              a{
+            a{
                 color: $dark_beige;
                 font-weight: bold;
-              }
-              a .pc_fb_icon{
-                margin-right: 10px;
-              }
-          li .pc_fb_icon{
-            a{
-              margin-right: 10px !important;
             }
-          }
           }
         }
       }
-}
-
+    }
 }
 //large for pc
 
+//sp
+@media #{$small} {
+
+}
+//small for sp
 
 }
 //header

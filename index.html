@@ -16,7 +16,6 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Owl Carousel CSS
@@ -41,29 +40,11 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <header>
     <div id="header_in" class="container">
-    <div class="row">
-      <div class="six columns logo">
+      <div class="logo">
         <h1><a href="index.html"><img class="u-max-full-width" src="images/top/logo.png" alt="APPLE BERRY" srcset="images/top/logo@2x.png 2x" /></a></h1>
       </div>
-      <div class="six columns navi-container">
-
-        <div class="sp_navi sp_only">
-          <h1><a href="index.html"><img id="sp_navi_btn" class="u-max-full-width" src="images/top/sp_navi.png" alt="sp_navi" srcset="images/top/sp_navi@2x.png 2x" /></a></h1>
-
-          <ul class="sp_navi_li">
-            <li><a href="#">LOGIN</a></li>
-            <li><a href="#">CART</a></li>
-            <li><a href="#">MY PAGE</a></li>
-            <li><a href="#">SHOPPING GUIDE</a></li>
-            <li><a href="#"><img class="fb_icon" src="./images/top_sp/fb.png" alt="facebook" srcset="images/top_sp/fb@2x.png 2x" /></a></li>
-            <li><a href="#"><img class="ig_icon" src="./images/top_sp/insta.png" alt="instagram" srcset="images/top_sp/insta@2x.png 2x" /></a></li>
-          </ul>
-        </div>
-        <!-- sp_navi -->
-
-        <div class="pc_navi pc_only">
-
-          <ul class="pc_navi_li">
+        <div class="pc_navi_container pc_only">
+          <ul class="pc_navi_wrap">
             <li><a href="#">LOGIN</a></li>
             <li><a href="#">CART</a></li>
             <li><a href="#">MY PAGE</a></li>
@@ -74,15 +55,26 @@
         </div>
         <!-- pc_navi -->
 
-      </div>
+          <div class="sp_navi_container sp_only">
+            <h1><a href="index.html"><img id="sp_navi_btn" class="u-max-full-width" src="images/top/sp_navi.png" alt="sp_navi" srcset="images/top/sp_navi@2x.png 2x" /></a></h1>
+
+            <ul class="sp_navi_wrap">
+              <li><a href="#">LOGIN</a></li>
+              <li><a href="#">CART</a></li>
+              <li><a href="#">MY PAGE</a></li>
+              <li><a href="#">SHOPPING GUIDE</a></li>
+              <li><a href="#"><img class="fb_icon" src="./images/top_sp/fb.png" alt="facebook" srcset="images/top_sp/fb@2x.png 2x" /></a></li>
+              <li><a href="#"><img class="ig_icon" src="./images/top_sp/insta.png" alt="instagram" srcset="images/top_sp/insta@2x.png 2x" /></a></li>
+            </ul>
+          </div>
+          <!-- sp_navi -->
+
     </div>
-    <!-- row -->
-  </div>
+    <!-- header_in -->
   </header>
 
 <div id="container">
-    <div class="row">
-      <div class="nine columns">
+  <div class="main">
         <div class="owl-carousel owl-theme">
             <div><img src="./images/top/ca_banner.jpg"></div>
             <!-- <div><img src="./images/top/ca_banner.jpg"></div>
@@ -149,12 +141,11 @@
         </div>
         <!-- shoppingGuide -->
       </div>
-        <!-- nine columns -->
 
-        <div class="three columns">
+        <div class="sideNavi">
           <div class="search-box">
-            <p class="pc_only"><img src="./images/top/itemserch.png"</p>
-            <input placeholder='Search..'>
+            <p class="pc_only"><img src="./images/top/itemserch.png"></p>
+            <span><input class="input_box" placeholder='Search..'></span>
           </div>
           <!-- search-box -->
           <div class="page_link"><p><a href="#">ページリンク</a></p>
@@ -172,29 +163,31 @@
           </div>
           <!-- categories -->
           <div class="about">
-            <p><img src="./images/top/about_img.jpg" alt="about"></p>
-            <p>お店の説明お店の説明お店の説明がはいりますお店の説明お店の説明お店の説明</p>
-            <p><a href="#" class="btn uppercase">more</a></p>
+            <h2 class="uppercase">About</h2>
+            <div class="side_box">
+            <img src="./images/top/about_img.jpg" alt="about">
+            <p class="side_text">お店の説明お店の説明お店の説明がはいりますお店の説明お店の説明お店の説明</p>
+            <p class="side_btn"><a href="#" class="btn uppercase">more</a></p>
+            </div>
           </div>
           <!-- about -->
           <div class="shop_info">
-            <p><img src="./images/top/shopinfo_img.jpg" alt="shop info"></p>
-            <p>お店の説明お店の説明お店の説明がはいりますお店の説明お店の説明お店の説明</p>
-            <p><a href="#" class="btn uppercase">more</a></p>
+            <h2 class="uppercase">Shop info</h2>
+            <div class="side_box">
+            <img src="./images/top/shopinfo_img.jpg" alt="shop info">
+            <p class="side_text">お店の説明お店の説明お店の説明がはいりますお店の説明お店の説明お店の説明</p>
+            <p class="side_btn"><a href="#" class="btn uppercase">more</a></p>
+            </div>
           </div>
           <!-- shop_info -->
         </div>
-        <!-- shop_info -->
-    </div>
-    <!-- row -->
+        <!-- sideNavi -->
     </div>
     <!-- container -->
 
 <footer>
   <div class="container">
-    <div class="row">
-      <div class="twelve columns">
-        <img class="u-max-full-width" src="./images/top/pagetop.png" alt="page top" />
+        <p class="to-top"><a href="#"><img class="u-max-full-width" src="./images/top/pagetop.png" alt="page top" /></a></p>
 
       <div class="footer_menu">
         <ul class="foot_navi">
@@ -204,11 +197,8 @@
         </ul>
       </div>
       <p class="copy">copyright (C) SampleCompany all rights reserved.</p>
-    </div>
-    <!-- columns -->
-    </div>
-    <!-- row -->
   </div>
+  <!--container -->
 </footer>
 <!-- //footer -->
 

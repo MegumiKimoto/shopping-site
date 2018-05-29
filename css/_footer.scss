@@ -1,0 +1,41 @@
+
+
+footer{
+  .container{
+    margin-bottom: 155px;
+    .to-top{
+      text-align: right;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $beige;
+    }
+    .footer_menu{
+      margin: 35px auto 30px;
+      .foot_navi{
+        display: flex;
+        justify-content: center;
+        li{
+          position: relative;
+          padding: 0 18px;
+          @include fontsize(12);
+          a{
+            color: #000;
+          }
+          &:after{
+            position: absolute;
+            content: "・";
+            right: -5px;
+            }
+          &:nth-child(3):after {
+            content: none;
+
+          }
+        }
+      }
+    }
+    .copy{
+      text-align: center;
+      color: #b8b4ac;
+      @include fontsize(10);
+    }
+  }
+}
