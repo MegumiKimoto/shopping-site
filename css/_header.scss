@@ -22,7 +22,7 @@ header{
   .container{
     width: 100%;
   }
-
+}
 //pc
 @media #{$large}{
     h1{
@@ -64,8 +64,43 @@ header{
 //sp
 @media #{$small} {
 
+header{
+  #header_in{
+  text-align: center;
+  padding: 15px 0 12px;
+  }
+  .sp_navi_container{
+    .icons{
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      margin-bottom: 0;
+      li{
+        margin-right: 10px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+    .sp_navi_wrap{
+      font-size: 12px;
+      display: block;
+      padding-left: 0;
+      width: 70%;
+      margin: auto;
+      padding: 10px 0;
+      background: #fff;
+      z-index: 100;
+      position: absolute;
+      top: 122px;
+      right: 4%;
+      display: none;
+      li{
+        padding: 10px;
+      }
+    }
+  }
 }
-//small for sp
 
 }
-//header
+//small for sp

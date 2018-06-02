@@ -18,7 +18,7 @@ $ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ
 $bg : #f9f8f6;
 $beige : #887f69;
 $dark_beige : #524c3e;
-
+$text-color: #000;
 
 body{
   color: #000000;
@@ -29,8 +29,15 @@ body{
 p {
   @include fontsize(12);
 }
-a{
+
+
+a {
+  color: $text-color;
   text-decoration: none;
+  &:hover {
+    color: lighten($text-color, 30%);
+    text-decoration: none;
+  }
 }
 
 li {
@@ -39,26 +46,25 @@ li {
     padding:0;
   }
 
+dd{
+  margin-left: 0;
+}
+
+img{
+  max-width: 100%;
+}
+
 .uppercase{
   text-transform: uppercase;
 }
 //Basic
 
 
-//sp
-@media #{$small} {
-    .pc_only{
-      display: none;
-    }
-}
-//small for sp
-
 //pc
 @media #{$large}{
   .sp_only{
     display: none;
   }
-}
 
 #container{
   display: flex;
@@ -67,7 +73,7 @@ li {
   .main{
     max-width: 700px;
     margin-right: 20px;
-      #newItems {
+      #newItems, #popularItems {
         h2{
           margin: 30px 0;
         }
@@ -98,9 +104,6 @@ li {
           }
         }
       }
-      #popularItems{
-        @extend #newItems;
-      }
       #shoppingGuide{
         h2{
           margin: 30px 0;
@@ -108,7 +111,7 @@ li {
         .guide_container{
           display: flex;
           background: #fff;
-          .delivery{
+          .delivery, .payment{
             padding: 20px;
             width: 50%;
             dl{
@@ -138,9 +141,7 @@ li {
           }
         }
         .payment{
-        @extend .delivery;
         border-left: 5px solid $bg;
-        box-sizing: border-box;
         }
       }
 
@@ -170,7 +171,7 @@ li {
           }
       }
     }
-    .page_link{
+    .page_link,.categories{
       p{
         margin: 10px 0;
         a{
@@ -191,7 +192,6 @@ li {
       }
     }
     .categories{
-      @extend .page_link;
       p{
         position: relative;
         margin: 0;
@@ -228,7 +228,7 @@ li {
         }
       }
     }
-    .about{
+    .about,.shop_info{
       h2{
         padding: 13px 10px 14px 15px;
         margin: 10px auto 0;
@@ -256,10 +256,206 @@ li {
         }
       }
     }
-    .shop_info{
-      @extend .about;
-    }
 }
 //.sideNavi
 }
 //.container
+}
+
+//sp
+@media #{$small} {
+    .pc_only{
+      display: none;
+    }
+#container{
+  padding: 0 8px;
+  .main{
+      .h2-sp{
+      text-align: center;
+      margin: 17px auto;
+    }
+    #newItems, #popularItems {
+      .item-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        li{
+          width: 50%;
+          background: #fff;
+          border-right: 3px solid $bg;
+          border-bottom: 3px solid $bg;
+          box-sizing: border-box;
+          padding: 8px;
+          p{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            img{
+              width: 100%;
+            }
+            span{
+              display: block;
+              padding-top: 7px;
+            }
+          }
+          &:nth-child(2n) {
+            border-right: 0;
+          }
+        }
+      }
+    }
+    #shoppingGuide{
+      .guide_container{
+        margin-bottom: 15px;
+        .delivery{
+          margin-bottom: 5px;
+        }
+        .delivery,.payment{
+          background: #fff;
+          padding: 20px;
+          dl{
+            margin-bottom: 0;
+            @include fontsize(12);
+            dt{
+              color: $beige;
+              font-weight: bold;
+              margin-bottom: 15px;
+              line-height: 1;
+            }
+            dd{
+              margin-bottom: 20px;
+              line-height: 1;
+              -webkit-margin-start: 0;
+              &:last-child{
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        h3{
+          @include fontsize(16);
+          font-weight: bold;
+          color: $beige;
+          margin: 0 0 20px 0;
+        }
+      }
+    }
+  }
+  .sideNavi{
+    .search-box{
+      padding: 20px;
+      background-color: #fff;
+      p{
+        margin: 0 0 10px 0;
+        }
+        span{
+          display: block;
+            background-color: #eeeeee;
+        input{
+          width: 268px;
+          height: 10px;
+          padding: 10px;
+          border: none;
+          background: url(../images/top/search_icon.png)no-repeat 87% 50%;
+          color: #b5b5b5;
+          font: {
+            style: italic;
+            size: 1.1rem;
+              }
+            }
+        }
+      }
+      .page_link,.categories{
+        p{
+          margin: 10px 0;
+          a{
+            display: block;
+            padding: 13px 10px 14px 15px;
+            color: #fff;
+            background-color: $beige;
+            &:after{
+              position: absolute;
+              content: "";
+              right: 17px;
+              width: 8px;
+              height: 14px;
+              margin-top: 2px;
+              background: url(../images/top/next_icon.png) top right no-repeat;
+            }
+          }
+        }
+      }
+      .categories{
+        p{
+          position: relative;
+          margin: 0;
+          a{
+            &:after{
+              right: 8px;
+              width: 14px;
+              height: 8px;
+              margin-top: 5px;
+              background: url(../images/top/down_icon.png) top right no-repeat;
+            }
+          }
+        }
+        ul{
+          padding: 0;
+          position: relative;
+          margin: 0 0 10px 0;
+          li{
+            display: block;
+            display: block;
+            padding: 13px 10px 14px 15px;
+            background-color: #fff;
+            @include fontsize(12);
+            margin-bottom: 1px;
+            &:after{
+              position: absolute;
+              content: "";
+              right: 11px;
+              width: 8px;
+              height: 14px;
+              margin-top: 2px;
+              background: url(../images/top/next_icon_gray.png) top right no-repeat;
+            }
+          }
+        }
+      }
+      .about,.shop_info{
+        h2{
+          padding: 13px 10px 14px 15px;
+          margin: 10px auto 0;
+          color: #fff;
+          background-color: $beige;
+          @include fontsize(12)
+        }
+        .side_box{
+          display: flex;
+          padding: 12px 10px;
+          background-color: #fff;
+          .flex50{
+            width: 50%;
+          .side_text{
+            margin: 10px;
+          }
+          .side_btn{
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            a{
+              color: #fff;
+              font-weight: bold;
+              padding: 10px 30px;
+              background-color: $beige;
+              border-radius: 16px;
+            }
+          }
+          }
+        }
+      }
+  }
+  //.sideNavi
+
+}
+}
+//small for sp

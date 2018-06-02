@@ -1,4 +1,4 @@
-
+$small: "(max-width:320px)";
 
 footer{
   .container{
@@ -20,15 +20,21 @@ footer{
           a{
             color: #000;
           }
-          &:after{
+          &:before{
             position: absolute;
             content: "・";
             right: -5px;
             }
-          &:nth-child(3):after {
+          &:last-child:before{
             content: none;
-
           }
+          &:first-child{
+            padding-left: 0;
+          }
+          //&:nth-child(3):after {
+            //content: none;
+
+          //}
         }
       }
     }
@@ -38,4 +44,30 @@ footer{
       @include fontsize(10);
     }
   }
+}
+
+@media #{$small} {
+footer{
+  .container{
+    padding: 0 8px;
+    margin-bottom: 90px;
+    .to-top{
+      text-align: center;
+    }
+    .footer_menu{
+      margin: 20px;
+      .foot_navi{
+        display: block;
+        padding-left: 0;
+        text-align: center;
+        li{
+          display: inline-block;
+          font-size: 11px;
+
+        }
+      }
+    }
+  }
+  }
+
 }
