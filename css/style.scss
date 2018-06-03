@@ -459,3 +459,23 @@ img{
 }
 }
 //small for sp
+
+//owl-theme
+.owl-theme .owl-dots, .owl-theme .owl-nav {
+    text-align: left;
+  }
+  .owl-theme .owl-dots .owl-dot span {
+    width: 25px;
+    height: 2px;
+    background: #aaaaaa;
+}
+    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+        background: #9d1a2d;
+}
+  .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 5px;
+  }
+
+@media #{$large}{
+
+}
